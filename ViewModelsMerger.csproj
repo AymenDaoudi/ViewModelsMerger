@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="Converters\MultipleToOneViewModelConverter.cs" />
     <Compile Include="Helpers\MergedViewModelsTypeBuilder.cs" />
+    <Compile Include="Helpers\PropertyComparer.cs" />
+    <Compile Include="Helpers\PropertyInfoComparer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

@@ -13,7 +13,8 @@ namespace ViewModelsMerger.Helpers
         #region Properties
 
         public static List<ViewModelBase> ViewModelsList { get; set; }
-        public static List<PropertyInfo> Properties { get; private set; }
+        public static List<Tuple<PropertyInfo,object>> Properties { get; private set; }
+        public static List<List<Tuple<PropertyInfo, object>>> RedundantProperties { get; private set; }
 
         #endregion
 
@@ -40,19 +41,41 @@ namespace ViewModelsMerger.Helpers
 
 
             //Pull properties from the input ViewModels and inject them in the target type
-            Properties = new List<PropertyInfo>();
+            Properties = new List<Tuple<PropertyInfo, object>>();
+            var mergedProperties = new List<List<Tuple<PropertyInfo, object>>>();
+            RedundantProperties = new List<List<Tuple<PropertyInfo, object>>>();
 
-            foreach (var viewModelBase in ViewModelsList)
+            ViewModelsList.ForEach(viewModel =>
             {
-                var type = viewModelBase.GetType();
-                var props = type.GetProperties().ToList();
-                Properties.AddRange(props);
+                var type = viewModel.GetType();
+                var properties = type.GetProperties().ToList();
+                var viewModelProperties = properties.Select(property => new Tuple<PropertyInfo, object>(property, viewModel)).ToList();
+                mergedProperties.Add(viewModelProperties);
+            });
 
-                foreach (var property in props)
+            var propertiesComparer = new PropertyComparer();
+            mergedProperties.ForEach(viewModelPropertis => Properties.AddRange(viewModelPropertis));
+
+            mergedProperties.ForEach(viewModelPropertis => viewModelPropertis.ForEach(property =>
+            {
+                var redundant = Properties.FindAll(p => propertiesComparer.Equals(p, property)).ToList();
+                if (redundant.Count > 1)
                 {
-                    CreateProperty(typeBuilder, property.Name, property.PropertyType, property.GetValue(viewModelBase, null));
+                    Properties.RemoveAll(redundant.Contains);
+                    RedundantProperties.Add(redundant);
                 }
+            }));
+
+
+            foreach (var property in Properties)
+            {
+                CreateProperty(typeBuilder, property.Item1.Name, property.Item1.PropertyType, null);
             }
+            foreach (var list in RedundantProperties)
+            {
+                CreateProperty(typeBuilder, list[0].Item1.Name, typeof(List<Object>), null);
+            }
+
             Type objectType = typeBuilder.CreateType();
             return objectType;
         }
@@ -121,18 +144,46 @@ namespace ViewModelsMerger.Helpers
             propertyBuilder.SetSetMethod(setPropMthdBldr);
         }
 
-        private static void AssignPropertyValues(ViewModelBase obj)
+        private static void AssignPropertyValues(ViewModelBase mergedViewModel)
         {
-            var prop = obj.GetType().GetProperties();
-            foreach (var propertyInfo in prop)
+            //For each non redundante property, find the corresponding one inside the ViewModels, and assign to it its value
+            var propertyComparer = new PropertyInfoComparer();
+            var mergedP = mergedViewModel.GetType()
+                .GetProperties();
+            var mergedProperties = mergedViewModel.GetType()
+                .GetProperties()
+                .Intersect(Properties.Select(property=>property.Item1), propertyComparer);
+
+            var mergedRedundantProperties = (mergedViewModel.GetType()
+                .GetProperties().Except(mergedProperties))
+                .Where(mergedProperty => mergedProperty.PropertyType.Name == "List`1")
+                .ToList();
+
+            foreach (var propertyInfo in mergedProperties)
             {
+                //For each ViewModel
                 foreach (var viewModel in ViewModelsList)
                 {
+                    //Find the orresponding one
                     var query = (from property in viewModel.GetType().GetProperties()
                                  where property.Name == propertyInfo.Name
                                  select property).FirstOrDefault();
-                    if (query != null) propertyInfo.SetValue(obj, query.GetValue(viewModel, null), null);
+                    //Assign value
+                    //Exception here , don't have setvalue method !!
+                    if (query != null) propertyInfo.SetValue(mergedViewModel, query.GetValue(viewModel, null), null);
                 }
+            }
+
+            var redundant = RedundantProperties.Select(red => red.Select(tuple => tuple.Item1.GetValue(tuple.Item2)).ToList()).ToList();
+            //For each list that contain duplicates from viewmodels
+            for (var i = 0; i< mergedRedundantProperties.Count(); i++)
+            {
+                //Give me the ViewModels that contain the properties of that list
+                //var query = (from viewModel in ViewModelsList
+                //             where viewModel.GetType().GetProperties().Any(info => info.Name == list.Name)
+                //             select viewModel).ToList().Select(viewModel=>viewModel.);
+
+                mergedRedundantProperties[i].SetValue(mergedViewModel, redundant[i]); 
             }
         }
         #endregion
