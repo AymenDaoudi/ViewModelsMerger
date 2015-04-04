@@ -148,8 +148,7 @@ namespace ViewModelsMerger.Helpers
         {
             //For each non redundante property, find the corresponding one inside the ViewModels, and assign to it its value
             var propertyComparer = new PropertyInfoComparer();
-            var mergedP = mergedViewModel.GetType()
-                .GetProperties();
+            
             var mergedProperties = mergedViewModel.GetType()
                 .GetProperties()
                 .Intersect(Properties.Select(property=>property.Item1), propertyComparer);

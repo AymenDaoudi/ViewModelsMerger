@@ -5,4 +5,3 @@ C:\Users\aymen.daoudi\Documents\Visual Studio 2013\Repos\ViewModelsMerger\bin\De
 C:\Users\aymen.daoudi\Documents\Visual Studio 2013\Repos\ViewModelsMerger\bin\Debug\GalaSoft.MvvmLight.WPF45.xml
 C:\Users\aymen.daoudi\Documents\Visual Studio 2013\Repos\ViewModelsMerger\obj\Debug\ViewModelsMerger.dll
 C:\Users\aymen.daoudi\Documents\Visual Studio 2013\Repos\ViewModelsMerger\obj\Debug\ViewModelsMerger.pdb
-C:\Users\aymen.daoudi\Documents\Visual Studio 2013\Repos\ViewModelsMerger\obj\Debug\ViewModelsMerger.csprojResolveAssemblyReference.cache
