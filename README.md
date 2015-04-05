@@ -1,4 +1,4 @@
-#ViewModelsMerger
+# ![ViewModelsMerger](https://raw.githubusercontent.com/AymenDaoudi/ViewModelsMerger/ReadMe/Icons/ViwModelMergerIcon64.png)    ViewModelsMerger 
 
 ## 1. What is ViewModelsMerger ?
 
@@ -55,7 +55,7 @@ ViewModel the property belongs to by using an index :
 
 The ViewModelsMerger relays on the [MVVMLight] (https://mvvmlight.codeplex.com/#summary) library from which it uses the class ViewModelBase.
 
-## License
+## License :
 
 This project is under the [Creative Commons Attribution NonCommercial NoDerivs (CC-NC-ND)] (https://tldrlegal.com/license/creative-commons-attribution-noncommercial-noderivs-(cc-nc-nd)#summary) fully described in the (c.f. [License.txt](License.txt)) file.
 
