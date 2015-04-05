@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ViewModelsMerger</id>
+    <version>1.0.0</version>
+    <authors>Aymen Daoudi</authors>
+    <owners>Aymen Daoudi</owners>
+    <licenseUrl>https://raw.githubusercontent.com/AymenDaoudi/ViewModelsMerger/ReadMe/Liscence.txt</licenseUrl>
+    <projectUrl>https://github.com/AymenDaoudi/ViewModelsMerger</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/AymenDaoudi/ViewModelsMerger/ReadMe/Icons/ViwModelMergerIcon128.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>
+      ViewModelsMerger is a library for WPF, that helps you merge different ViewModels into one ViewModel at runtime.
+    </description>
+    <releaseNotes>First Release</releaseNotes>
+    <copyright>Copyright 2015</copyright>
+    <tags>WPF MVVM MVVMLight ViewModel Converter MultiBinding Reflection</tags>
+    <summary>
+      ViewModelsMerger is a library for WPF, that helps you merge different ViewModels into one ViewModel at runtime.
+      In cases where a View can have elements, controls or different regions that have different ViewModels,
+      You don't need to change the DataContext in code every time for each part of the view,
+      you just set one DataContext for the top parrent object that encompasses the different DataContexts (ViewModels)
+      and Merge them into one ViewModel at RunTime.
+    </summary>
+  </metadata>
+</package>
