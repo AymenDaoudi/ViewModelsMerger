@@ -51,6 +51,10 @@ ViewModel the property belongs to by using an index :
 
 ## 4. Installing :
 
+Install from Nuget :
+
+> PM> Install-Package ViewModelsMerger
+
 ## 5. Caution :
 
 The ViewModelsMerger relays on the [MVVMLight] (https://mvvmlight.codeplex.com/#summary) library from which it uses the class ViewModelBase.
