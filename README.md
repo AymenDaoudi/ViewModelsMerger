@@ -64,6 +64,6 @@ The ViewModelsMerger relays on the [MVVMLight] (https://mvvmlight.codeplex.com/#
 
 ## License :
 
-This project is under the [Creative Commons Attribution NonCommercial NoDerivs (CC-NC-ND)] (https://tldrlegal.com/license/creative-commons-attribution-noncommercial-noderivs-(cc-nc-nd)#summary) fully described in the (c.f. [License.txt](License.txt)) file.
+This project is under the [Creative Commons Attribution NonCommercial NoDerivs (CC-NC-ND)] (https://tldrlegal.com/license/creative-commons-attribution-noncommercial-noderivs-(cc-nc-nd)#summary) fully described in the (c.f. [License.txt](https://raw.githubusercontent.com/AymenDaoudi/ViewModelsMerger/master/Liscence.txt)) file.
 
 ![CC-NC-ND](http://i.creativecommons.org/l/by-nc-nd/3.0/88x31.png)
