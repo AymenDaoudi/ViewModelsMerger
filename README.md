@@ -1,5 +1,5 @@
 # ![ViewModelsMerger](https://raw.githubusercontent.com/AymenDaoudi/ViewModelsMerger/ReadMe/Icons/ViwModelMergerIcon64.png)    ViewModelsMerger
-
+[![Release](https://img.shields.io/github/release/AymenDaoudi/ViewModelsMerger.svg?style=flat-square)](https://github.com/AymenDaoudi/ViewModelsMerger/releases/latest)
 [![Downloads](https://img.shields.io/nuget/dt/ViewModelsMerger.svg?style=flat-square)](https://www.nuget.org/packages/ViewModelsMerger/)
 [![Issues](https://img.shields.io/github/issues/AymenDaoudi/ViewModelsMerger.svg?style=flat-square)](https://github.com/MahApps/MahApps.Metro/issues)
 
