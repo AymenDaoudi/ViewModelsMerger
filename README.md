@@ -1,4 +1,4 @@
-# ![ViewModelsMerger](https://raw.githubusercontent.com/AymenDaoudi/ViewModelsMerger/ReadMe/Icons/ViwModelMergerIcon32.png)    ViewModelsMerger 
+# ![ViewModelsMerger](https://raw.githubusercontent.com/AymenDaoudi/ViewModelsMerger/ReadMe/Icons/ViwModelMergerIcon64.png)    ViewModelsMerger 
 
 ## 1. What is ViewModelsMerger ?
 
