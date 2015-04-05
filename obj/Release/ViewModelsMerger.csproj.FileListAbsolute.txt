@@ -1,0 +1,8 @@
+C:\Users\aymen.daoudi\Documents\Visual Studio 2013\Repos\ViewModelsMerger\bin\Release\ViewModelsMerger.dll
+C:\Users\aymen.daoudi\Documents\Visual Studio 2013\Repos\ViewModelsMerger\bin\Release\ViewModelsMerger.pdb
+C:\Users\aymen.daoudi\Documents\Visual Studio 2013\Repos\ViewModelsMerger\bin\Release\GalaSoft.MvvmLight.WPF45.dll
+C:\Users\aymen.daoudi\Documents\Visual Studio 2013\Repos\ViewModelsMerger\bin\Release\GalaSoft.MvvmLight.WPF45.pdb
+C:\Users\aymen.daoudi\Documents\Visual Studio 2013\Repos\ViewModelsMerger\bin\Release\GalaSoft.MvvmLight.WPF45.xml
+C:\Users\aymen.daoudi\Documents\Visual Studio 2013\Repos\ViewModelsMerger\obj\Release\ViewModelsMerger.csprojResolveAssemblyReference.cache
+C:\Users\aymen.daoudi\Documents\Visual Studio 2013\Repos\ViewModelsMerger\obj\Release\ViewModelsMerger.dll
+C:\Users\aymen.daoudi\Documents\Visual Studio 2013\Repos\ViewModelsMerger\obj\Release\ViewModelsMerger.pdb
