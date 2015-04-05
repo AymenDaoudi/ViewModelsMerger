@@ -2,7 +2,7 @@
 <package >
   <metadata>
     <id>ViewModelsMerger</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>Aymen Daoudi</authors>
     <owners>Aymen Daoudi</owners>
     <licenseUrl>https://raw.githubusercontent.com/AymenDaoudi/ViewModelsMerger/ReadMe/Liscence.txt</licenseUrl>
@@ -15,6 +15,9 @@
     <releaseNotes>First Release</releaseNotes>
     <copyright>Copyright 2015</copyright>
     <tags>WPF MVVM MVVMLight ViewModel Converter MultiBinding Reflection</tags>
+    <dependencies>
+      <dependency id="MvvmLightLibs" version="[4.2.30.0]" />
+    </dependencies>
     <summary>
       ViewModelsMerger is a library for WPF, that helps you merge different ViewModels into one ViewModel at runtime.
       In cases where a View can have elements, controls or different regions that have different ViewModels,
